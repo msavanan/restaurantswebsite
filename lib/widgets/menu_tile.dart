@@ -24,7 +24,7 @@ class MenuTile extends StatelessWidget {
                 height: 5,
               ),
               Text(
-                "Rs 200",
+                "\u20b9 200",
                 style:
                     TextStyle(fontWeight: FontWeight.bold),
               ),
@@ -34,7 +34,7 @@ class MenuTile extends StatelessWidget {
               Text(
                 'Anjappar Veg Meals Enough To Feed 1 People Easily! Chettinad Flavour Anjappar Meals. The Meal Box Comes With Items:- Sweet, White Rice, Chicken Masala [2 Pcs]Sambar, Rasam, Koottu, Poriyal, Curd, Appalam, Pickle, Ghee, Dal Powder. Its Satisfying And Delicious Comes With A Banana Leaf.',
                 softWrap: true,
-                maxLines: 10,
+                maxLines: 4,
               ),
             ]),
       ),

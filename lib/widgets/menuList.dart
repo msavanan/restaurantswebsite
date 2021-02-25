@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:restaurantswebsite/cart/Cart.dart';
+import 'package:restaurantswebsite/cart/cart_card.dart';
 import 'package:restaurantswebsite/widgets/menu_tile.dart';
 
 class MenuList extends StatefulWidget {
@@ -8,6 +10,7 @@ class MenuList extends StatefulWidget {
 }
 
 class _MenuListState extends State<MenuList> {
+  final amount = 0;
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -49,10 +52,7 @@ class _MenuListState extends State<MenuList> {
                       child: MenuTile()),
                 ]),
           ),
-          Text(
-            'Cart Empty',
-            style: TextStyle(fontSize: 25),
-          )
+          Cart()
         ],
       ),
     );
