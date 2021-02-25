@@ -21,7 +21,7 @@ class _AppViewState extends State<AppView> {
           NavigationBar(),
           Expanded(child: widget.child),
           Container(
-            padding: EdgeInsets.all(20),
+            padding: EdgeInsets.all(10),
             child: Text(
                 'Copyright Reserved \u00a9 2020. All Rights Reserved. Developed by Saravanan'),
           )

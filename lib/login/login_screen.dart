@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:restaurantswebsite/widgets/login_text_field.dart';
+import 'package:restaurantswebsite/login/login_text_field.dart';
+import 'email_validator.dart';
 
 class LoginPage extends StatefulWidget {
   final bool setPage;
@@ -13,17 +14,6 @@ class _LoginPageState extends State<LoginPage> {
   String _password;
 
   final _formKey = GlobalKey<FormState>();
-
-  String emailValidator(String value) {
-    Pattern pattern =
-        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
-    RegExp regex = new RegExp(pattern);
-    if (value.isEmpty) return '*Required';
-    if (!regex.hasMatch(value))
-      return '*Enter a valid email';
-    else
-      return null;
-  }
 
   @override
   Widget build(BuildContext context) {

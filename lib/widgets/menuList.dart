@@ -17,39 +17,37 @@ class _MenuListState extends State<MenuList> {
         children: [
           Container(
             width: width * 0.7,
-            child: Expanded(
-              child: ListView(
-                  padding: EdgeInsets.only(top: 10),
-                  scrollDirection: Axis.vertical,
-                  physics: AlwaysScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  children: [
-                    Container(
-                        padding: EdgeInsets.only(
-                            top: 10, bottom: 10),
-                        child: MenuTile()),
-                    Container(
-                        padding: EdgeInsets.only(
-                            top: 10, bottom: 10),
-                        child: MenuTile()),
-                    Container(
-                        padding: EdgeInsets.only(
-                            top: 10, bottom: 10),
-                        child: MenuTile()),
-                    Container(
-                        padding: EdgeInsets.only(
-                            top: 10, bottom: 10),
-                        child: MenuTile()),
-                    Container(
-                        padding: EdgeInsets.only(
-                            top: 10, bottom: 10),
-                        child: MenuTile()),
-                    Container(
-                        padding: EdgeInsets.only(
-                            top: 10, bottom: 10),
-                        child: MenuTile()),
-                  ]),
-            ),
+            child: ListView(
+                padding: EdgeInsets.only(top: 10),
+                scrollDirection: Axis.vertical,
+                physics: AlwaysScrollableScrollPhysics(),
+                shrinkWrap: true,
+                children: [
+                  Container(
+                      padding: EdgeInsets.only(
+                          top: 10, bottom: 10),
+                      child: MenuTile()),
+                  Container(
+                      padding: EdgeInsets.only(
+                          top: 10, bottom: 10),
+                      child: MenuTile()),
+                  Container(
+                      padding: EdgeInsets.only(
+                          top: 10, bottom: 10),
+                      child: MenuTile()),
+                  Container(
+                      padding: EdgeInsets.only(
+                          top: 10, bottom: 10),
+                      child: MenuTile()),
+                  Container(
+                      padding: EdgeInsets.only(
+                          top: 10, bottom: 10),
+                      child: MenuTile()),
+                  Container(
+                      padding: EdgeInsets.only(
+                          top: 10, bottom: 10),
+                      child: MenuTile()),
+                ]),
           ),
           Text(
             'Cart Empty',
