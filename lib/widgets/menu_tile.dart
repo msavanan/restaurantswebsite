@@ -1,17 +1,20 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:restaurantswebsite/model/menu.dart';
 
 class MenuTile extends StatelessWidget {
   final String desc;
   final double price;
   final String image;
   final String menuTitle;
-
-  MenuTile(
-      {this.menuTitle, this.image, this.desc, this.price});
+  final String index;
+  MenuTile({this.menuTitle, this.image, this.desc, this.price, this.index});
 
   @override
   Widget build(BuildContext context) {
+    //OrderMenu menu = OrderMenu();
+
     return Row(children: [
       //Image(image: AssetImage(image)),
       Image(
@@ -27,16 +30,14 @@ class MenuTile extends StatelessWidget {
             children: [
               Text(
                 menuTitle,
-                style:
-                    TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(fontWeight: FontWeight.bold),
               ),
               SizedBox(
                 height: 5,
               ),
               Text(
                 "\u20b9 $price",
-                style:
-                    TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(fontWeight: FontWeight.bold),
               ),
               SizedBox(
                 height: 5,
@@ -55,7 +56,10 @@ class MenuTile extends StatelessWidget {
         color: Colors.green,
         height: 50,
         minWidth: 60,
-        onPressed: () {},
+        onPressed: () {
+          Provider.of<OrderMenu>(context, listen: false).setMenu(
+              orderPrice: price, orderMenuTitle: menuTitle, orderIndex: index);
+        },
         child: Text('Add +'),
       )
     ]);

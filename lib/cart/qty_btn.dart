@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:restaurantswebsite/model/menu.dart';
 
 class QtyBtn extends StatefulWidget {
   @override
@@ -7,9 +9,9 @@ class QtyBtn extends StatefulWidget {
 }
 
 class _QtyBtnState extends State<QtyBtn> {
-  int qty = 10;
   @override
   Widget build(BuildContext context) {
+    int qty = Provider.of<OrderMenu>(context, listen: false).qty + 1;
     return Container(
       decoration: BoxDecoration(border: Border.all()),
       child: Row(children: [

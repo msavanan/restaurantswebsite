@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:restaurantswebsite/model/menu.dart';
 
 import 'cart_card.dart';
 
@@ -25,7 +27,10 @@ class _CartState extends State<Cart> {
               height: 20,
             ),
             CartCard(
-              menuTxt: "Single Carrier Non Veg Meals",
+              menuTxt: Provider.of<OrderMenu>(context, listen: true).menuTitle,
+              price: Provider.of<OrderMenu>(context, listen: true).price,
+              //menuTxt: Provider.of<OrderMenu>(context, listen: true).menuTitle,
+              //price: Provider.of<OrderMenu>(context, listen: true).price,
             ),
           ],
         ),
