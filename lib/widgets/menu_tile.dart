@@ -1,12 +1,20 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class MenuTile extends StatelessWidget {
+  final String desc;
+  final double price;
+  final String image;
+  final String menuTitle;
+
+  MenuTile(
+      {this.menuTitle, this.image, this.desc, this.price});
+
   @override
   Widget build(BuildContext context) {
     return Row(children: [
-      Image(
-          image: AssetImage(
-              'assets/33727e20cf97c75cf9d6230ac30b1c0e.jpg')),
+      Image(image: AssetImage(image)),
+      //Image(image: NetworkImage('https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/woozgsqbzjf7po7v2lye'),),
       SizedBox(
         width: 10,
       ),
@@ -16,7 +24,7 @@ class MenuTile extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Single Carrier Non Veg Meals',
+                menuTitle,
                 style:
                     TextStyle(fontWeight: FontWeight.bold),
               ),
@@ -24,7 +32,7 @@ class MenuTile extends StatelessWidget {
                 height: 5,
               ),
               Text(
-                "\u20b9 200",
+                "\u20b9 $price",
                 style:
                     TextStyle(fontWeight: FontWeight.bold),
               ),
@@ -32,7 +40,7 @@ class MenuTile extends StatelessWidget {
                 height: 5,
               ),
               Text(
-                'Anjappar Veg Meals Enough To Feed 1 People Easily! Chettinad Flavour Anjappar Meals. The Meal Box Comes With Items:- Sweet, White Rice, Chicken Masala [2 Pcs]Sambar, Rasam, Koottu, Poriyal, Curd, Appalam, Pickle, Ghee, Dal Powder. Its Satisfying And Delicious Comes With A Banana Leaf.',
+                desc,
                 softWrap: true,
                 maxLines: 4,
               ),
@@ -51,11 +59,3 @@ class MenuTile extends StatelessWidget {
     ]);
   }
 }
-
-/*Container(
-child: Text(
-'Anjappar Veg Meals Enough To Feed 1 People Easily! Chettinad Flavour Anjappar Meals. The Meal Box Comes With Items:- Sweet, White Rice, Chicken Masala [2 Pcs]Sambar, Rasam, Koottu, Poriyal, Curd, Appalam, Pickle, Ghee, Dal Powder. Its Satisfying And Delicious Comes With A Banana Leaf.',
-softWrap: true,
-maxLines: 10,
-),
-),*/
