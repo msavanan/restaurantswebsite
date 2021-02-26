@@ -10,9 +10,9 @@ class Cart extends StatefulWidget {
 }
 
 class _CartState extends State<Cart> {
-  double totalPrice = 200;
   @override
   Widget build(BuildContext context) {
+    double price = Provider.of<OrderMenu>(context, listen: false).price;
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -26,12 +26,17 @@ class _CartState extends State<Cart> {
             SizedBox(
               height: 20,
             ),
-            CartCard(
-              menuTxt: Provider.of<OrderMenu>(context, listen: true).menuTitle,
-              price: Provider.of<OrderMenu>(context, listen: true).price,
-              //menuTxt: Provider.of<OrderMenu>(context, listen: true).menuTitle,
-              //price: Provider.of<OrderMenu>(context, listen: true).price,
-            ),
+            price != 0
+                ? CartCard(
+                    menuTxt:
+                        Provider.of<OrderMenu>(context, listen: true).menuTitle,
+                    price: Provider.of<OrderMenu>(context, listen: true).price,
+                    //menuTxt: Provider.of<OrderMenu>(context, listen: true).menuTitle,
+                    //price: Provider.of<OrderMenu>(context, listen: true).price,
+                  )
+                : Container(
+                    height: 50,
+                  ),
           ],
         ),
         Row(
@@ -45,7 +50,7 @@ class _CartState extends State<Cart> {
               width: 10,
             ),
             Text(
-              "\u20b9 $totalPrice ",
+              "\u20b9 ${Provider.of<OrderMenu>(context, listen: true).price} ",
               style: TextStyle(fontSize: 25),
             )
           ],

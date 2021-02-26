@@ -30,9 +30,7 @@ class _QtyBtnState extends State<QtyBtn> {
         MaterialButton(
             minWidth: 5,
             onPressed: () {
-              setState(() {
-                qty = qty + 1;
-              });
+              // Provider.of<OrderMenu>(context, listen: false).qty += 1;
             },
             child: Text('+') //Icon(Icons.add),
             )

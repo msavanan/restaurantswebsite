@@ -6,8 +6,7 @@ import '../routes/routes.dart';
 
 class NavigationBar extends StatefulWidget {
   @override
-  _NavigationBarState createState() =>
-      _NavigationBarState();
+  _NavigationBarState createState() => _NavigationBarState();
 }
 
 class _NavigationBarState extends State<NavigationBar> {
@@ -23,19 +22,19 @@ class _NavigationBarState extends State<NavigationBar> {
         children: [
           NavigationItem(
             selected: index == 0,
-            title: 'Home',
-            routeName: routeHome,
-            onHighlight: onHighlight,
-          ),
-          NavigationItem(
-            selected: index == 1,
             title: 'SignIn',
             routeName: routeSignIn,
             onHighlight: onHighlight,
           ),
           NavigationItem(
+            selected: index == 1,
+            title: 'Home',
+            routeName: routeHome,
+            onHighlight: onHighlight,
+          ),
+          NavigationItem(
             selected: index == 2,
-            title: 'SignUp',
+            title: 'Blog',
             routeName: routeSignUp,
             onHighlight: onHighlight,
           ),
