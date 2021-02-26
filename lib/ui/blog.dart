@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:restaurantswebsite/login/login_screen.dart';
 
 class blog extends StatelessWidget {
   @override

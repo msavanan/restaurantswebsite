@@ -31,8 +31,6 @@ class _CartState extends State<Cart> {
                     menuTxt:
                         Provider.of<OrderMenu>(context, listen: true).menuTitle,
                     price: Provider.of<OrderMenu>(context, listen: true).price,
-                    //menuTxt: Provider.of<OrderMenu>(context, listen: true).menuTitle,
-                    //price: Provider.of<OrderMenu>(context, listen: true).price,
                   )
                 : Container(
                     height: 50,

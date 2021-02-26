@@ -26,11 +26,6 @@ class LoginTextField extends StatelessWidget {
         hintText: hintTxt,
         filled: true,
         fillColor: Colors.white,
-        /*border: OutlineInputBorder(
-            borderRadius: const BorderRadius.all(
-              const Radius.circular(5.0),
-            ),
-          ),*/
       ),
     );
   }

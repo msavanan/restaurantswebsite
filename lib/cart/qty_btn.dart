@@ -24,16 +24,14 @@ class _QtyBtnState extends State<QtyBtn> {
                 }
               });
             },
-            child: Text('-') // Icon(Icons.remove),
-            ),
+            child: Text('-')),
         Text(qty.toString()),
         MaterialButton(
             minWidth: 5,
             onPressed: () {
               // Provider.of<OrderMenu>(context, listen: false).qty += 1;
             },
-            child: Text('+') //Icon(Icons.add),
-            )
+            child: Text('+'))
       ]),
     );
   }
