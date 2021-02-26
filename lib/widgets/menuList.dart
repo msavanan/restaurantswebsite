@@ -1,6 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:restaurantswebsite/cart/Cart.dart';
-import 'package:restaurantswebsite/widgets/menu_tile.dart';
+import 'package:restaurantswebsite/widgets/listViewBuilder.dart';
+import 'package:restaurantswebsite/constants/menudata.dart';
 
 class MenuList extends StatefulWidget {
   @override
@@ -19,15 +21,46 @@ class _MenuListState extends State<MenuList> {
   final String menuTitle = 'Single Carrier Non Veg Meals';
 
   @override
+  void initState() {
+    super.initState();
+    checkMenu();
+  }
+
+  void checkMenu() async {
+    final snapshots = await FirebaseFirestore.instance
+        .collection('menulist')
+        .get();
+
+    if (snapshots.docs.isEmpty) {
+      createMenu();
+    }
+  }
+
+  void createMenu() {
+    menuData.forEach((k, v) {
+      final menuList =
+          FirebaseFirestore.instance.collection('menulist');
+      menuList.add({
+        "price": v["price"],
+        "desc": v["desc"],
+        "image": v["image"],
+        "menutitle": v["menuTitle"]
+      });
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    //return Expanded(child: ListTileBuilder());
     return Expanded(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Container(
             width: width * 0.7,
-            child: ListView(
+            child: ListTileBuilder(),
+            /*ListView(
                 padding: EdgeInsets.only(top: 10),
                 scrollDirection: Axis.vertical,
                 physics: AlwaysScrollableScrollPhysics(),
@@ -81,7 +114,7 @@ class _MenuListState extends State<MenuList> {
                           desc: desc,
                           price: price,
                           menuTitle: menuTitle)),
-                ]),
+                ]),*/
           ),
           Cart()
         ],

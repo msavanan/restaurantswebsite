@@ -13,8 +13,10 @@ class MenuTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(children: [
-      Image(image: AssetImage(image)),
-      //Image(image: NetworkImage('https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/woozgsqbzjf7po7v2lye'),),
+      //Image(image: AssetImage(image)),
+      Image(
+        image: NetworkImage(image),
+      ),
       SizedBox(
         width: 10,
       ),

@@ -4,9 +4,16 @@ class Menu {
   double price;
   String desc;
   String menuTitle;
+  String image;
+}
 
-  void getMenu() async {
-    final menu = await FirebaseFirestore.instance;
-    final documents = await menu.collection('menu').get();
-  }
+addMenu({image, desc, price, menuTitle}) {
+  final menuList =
+      FirebaseFirestore.instance.collection('menulist');
+  menuList.add({
+    "image": image,
+    "desc": desc,
+    "price": price,
+    "menutitle": menuTitle
+  });
 }
